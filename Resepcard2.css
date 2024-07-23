@@ -1,0 +1,94 @@
+/* file css ini tidak dikoneksikan ke file index.html segingga code yang  ada
+disini tidak akan berpengaruh ke dalam file index.html namun file yang ada di index.css
+akan berpengaruh ke dalam file halResep.html karena index.css sudah terpanggil di
+dalam halResep.html hati berhati hatilah saat mengubah file index.css karena
+akan berpengaruh ke dalam file halResep.html*/
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f7f7f7;
+  color: black;
+}
+
+main {
+  margin-top: 8%;
+}
+
+.containerP{
+  display: flex;
+}
+
+main div img {
+  border-radius: 10px;
+  margin-left: 3%;
+  margin-right: 3%;
+  max-height: 26rem;
+  width: 50%;
+  
+}
+
+main div p {
+  margin-top: 15px;
+}
+
+/* panah preview */
+.prev{
+  width:fit-content;
+  display: flex;
+  height: 2rem;
+  margin-bottom: 2%;
+  margin-left: 3%;
+  margin-top: -5%;
+}
+.arrow{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: .5s;
+  overflow: hidden;
+}
+
+.arrow:hover {
+  border: solid 2px black;
+  border-radius: 50%;
+}
+
+.arrow:after{
+    position:absolute;
+    display:block;
+    content:"";
+    color:black;
+    width: 20px;
+    height: 15px;
+    top:-1px;
+    border-bottom:solid 2px;
+    transform:translatex(4px);
+  }
+
+.arrow:before {
+  position: absolute;
+  display: block;
+  content: "";
+  color: black;
+  width: 8px;
+  height: 8px;
+  border-top: solid 2px;
+  border-left: solid 2px;
+  top: 50%;
+  left: 2px;
+  transform-origin: 0% 0%;
+  transform: rotatez(-45deg);
+}
+
+/* footer start */
+footer {
+  margin-top: 15rem;
+  color: white;
+}
+/* footer end */
+

@@ -1,0 +1,651 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  color: white;
+  background-color: #f7f7f7;
+}
+li ,a {
+  color: black;
+  text-decoration: none;
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+  overflow: hidden;
+}
+.navbar {
+  margin-right: 5%;
+  /* background-color: antiquewhite; */
+  display: flex;
+  align-items: center;
+}
+/* animasi garis bawah dibagian navbar start */
+.navbar ul a::after {
+  content: "";
+  display: block;
+  border-bottom: 0.2rem solid;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+  color: black;
+  border-radius: 5px;
+}
+.navbar a:hover::after {
+  transform: scaleX(0.7);
+}
+/* animasi garis bawah dibagian navbar end */
+.Logo{
+  margin-left: 5%;
+}
+
+.Logo a {
+  /* background-color: red; */
+  font-size: 2.5rem;
+  overflow: hidden;
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  /* background-color: blue; */
+}
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+}
+.navbar ul li {
+  /* background-color: aqua; */
+  font-size: larger;
+  list-style: none;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+/* bagian body start */
+
+.icon1 {
+  margin-left: 5%;
+  font-size: larger;
+  /* background-color: blueviolet; */
+  margin-right: 5%;
+}
+
+/* font stroke start*/
+.containerStr {
+  position: relative;
+  margin-left: 4%;
+  margin-bottom: 3%;
+  top: 16rem;
+  display: flex;
+  font-size: 50px;
+  font-family: sans-serif;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke: 1.5px black;
+}
+/* font stroke end */
+
+/* slider start */
+#slider {
+  margin: 0 auto;
+  margin-top: 5%;
+  /* background-color: black; */
+  color: black;
+  width: 85%;
+  max-width: 100%;
+  text-align: center;
+}
+#slider input[type="radio"] {
+  display: none;
+}
+#slider label {
+  cursor: pointer;
+  text-decoration: none;
+}
+#slides {
+  padding: 10px;
+  border: 3px solid black;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+}
+#overflow {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#slide1:checked ~ #slides .inner {
+  margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+  margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+  margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+  margin-left: -300%;
+}
+#slides .inner {
+  transition: 800ms cubic-bezier(0.77, 0, 0.175, 1);
+  width: 400%;
+  line-height: 0;
+  height: 400px;
+  display: flex;
+}
+#slides .slide {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+#slides .slide_1
+ {
+  background-image: url(assets/gambar1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+#slides .slide_2{
+  background-image: url(https://img-global.cpcdn.com/recipes/fa82434cbb00c60b/1360x964cq70/pancake-lembut-dan-simpel-foto-resep-utama.webp);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+#slides .slide_3{
+  background-image: url(https://img-global.cpcdn.com/recipes/f72fe22d0c7b47eb/1360x964cq70/chocochip-cookies-simple-foto-resep-utama.webp);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+#slides .slide_4{
+  background-image: url(https://img-global.cpcdn.com/recipes/96a3fdb3a7487421/1360x964cq70/puding-instan-strawberry-alpukat-praktis-foto-resep-utama.webp);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+#controls {
+  margin: -180px 0 0 0;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 3rem;
+}
+#controls label {
+  align-items: center;
+  display: none;
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  margin-right: -50px;
+  margin-left: -50px;
+}
+#controls label:hover {
+  opacity: 1;
+}
+#slide1:checked ~ #controls .right-arrow:nth-of-type(2),
+#slide2:checked ~ #controls .right-arrow:nth-of-type(4),
+#slide3:checked ~ #controls .right-arrow:nth-of-type(6),
+#slide4:checked ~ #controls .right-arrow:nth-of-type(8) {
+  background: url() no-repeat;
+  /* background-color: blue; */
+  display: block;
+  align-content: center;
+  justify-content: center;
+}
+/* Tombol Panah Slider Ke Kanan End */
+
+/* Tombol Panah Slider Ke Kiri Start */
+#slide1:checked ~ #controls .left-arrow:nth-of-type(1),
+#slide2:checked ~ #controls .left-arrow:nth-of-type(3),
+#slide3:checked ~ #controls .left-arrow:nth-of-type(5),
+#slide4:checked ~ #controls .left-arrow:nth-of-type(7) {
+  background: url() no-repeat;
+  /* background-color: red; */
+  display: block;
+  align-content: center;
+  justify-content: center;
+}
+/* Tombol Panah Slider Ke Kiri End */
+
+#bullets {
+  margin: 150px 0 0;
+  text-align: center;
+}
+#bullets label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #ccc;
+  margin: 0 10px;
+}
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+  background: #444;
+}
+@media screen and (max-width: 900px) {
+  #slider {
+    max-width: calc(100% - 140px);
+  }
+}
+
+/* slider end */
+
+/* button didalam slider start */
+.slide-content {
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+}
+
+.button-81 {
+  border-radius: 1.5rem;
+  font-size: large;
+  border: 0;
+  padding: 0.5rem;
+  color: #000;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-81:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .inner .button-81 {
+    padding: 0.5rem;
+  }
+}
+
+/* button cek selengkapnya (panahnya) */
+
+.button-81 span {
+  left: 0.3rem;
+  cursor: pointer;
+  /* display: inline-block; */
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-81 span:after {
+  content: "\00bb";
+  position: relative;
+  opacity: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+.button-81:hover span {
+  font-size: large;
+  font-weight: 500;
+  padding-right: 1.5rem;
+}
+
+.button-81:hover span:after {
+  opacity: 1;
+  left: 10px;
+  color: white;
+}
+
+/* button didalam slider End */
+
+.container {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  /* background-color: aqua; */
+}
+
+.card {
+  height: 30rem;
+  width: 90%;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-image: url(assets/gambar1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* a:hover {
+  color: red;
+} */
+
+.container2Wrapper {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row-reverse;
+  /* justify-content: space-between; */
+}
+
+.container2 {
+  /* background-color: aquamarine; */
+  margin-top: 3rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.container2 p {
+  /* background-color: red; */
+  margin: 2px;
+  max-height: 8.2rem; /* Atur tinggi maksimum sesuai kebutuhan */
+  overflow-y: auto;
+
+}
+
+.card2,
+.card3,
+.card4,
+.card5 {
+  color: black;
+  width:100%;
+  height: 16rem;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+  rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+  rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 5%;
+  /* margin-right: 5%; */
+}
+
+.container2 .card2:nth-child(1){
+  margin-left: 10%;
+}
+
+.card2 img,
+.card3 img,
+.card4 img,
+.card5 img {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 7rem;
+}
+
+/* ASIDE SECTION */
+aside {
+  /* background-color: blue; */
+  display: flex;
+  justify-content:center;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 75%;
+
+}
+
+.containeraside{
+  width: 100%;
+}
+
+.containeraside h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.asideBox ul li a:nth-child(2){
+  margin-left: .2rem;
+}
+
+.asideBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.asideBox ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.asideBox ul li {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+  rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+  rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  overflow: hidden;
+  /* background-color: aqua; */
+  border-radius: 10px;
+  margin-top: 20%;
+  padding: 0;
+  display: flex;
+  align-items: start;
+}
+
+.asideBox ul li:nth-child(1){
+  margin-top: 5% ;
+}
+
+.asideBox ul li a {
+  /* background-color: red; */
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.asideBox ul li a img {
+  width: 100%;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.asideBox ul li a span {
+  margin: 0;
+}
+
+
+/* ASIDE SECTION END */
+
+footer {
+  background-color: #262626;
+  width: 100%;
+  height: 13rem;
+  /* margin-top: 5%; */
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content:end;
+  align-items: center;
+  margin-top: 5rem;
+  flex-direction: column;
+}
+
+footer .iconfoot{
+  display: flex;
+  justify-content: center;
+  /* background-color: blue; */
+  margin-bottom: 3%;
+}
+
+.footcpy{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+footer p {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top:5px;
+  margin-bottom: 5px;
+  /* background-color: red; */
+  font-size: large;
+}
+
+footer .iconfoot ul{
+  /* background-color: aqua; */
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .social {
+  display: flex;
+}
+
+/* bagian link animation footer  start*/
+
+footer .social li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 30px;
+  color: #666;
+  background-color: #171515;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+footer .social li:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: #0a82ed;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+
+footer .social li:nth-child(1):hover:before {
+  background-color: #0a82ed;
+}
+
+footer .social li:nth-child(2):hover:before {
+  background-color: #04a2ffb3;
+}
+
+footer .social li:nth-child(3):hover:before {
+  background-color: #e23670;
+}
+
+footer .social li:nth-child(4):hover:before {
+  background-color: #2a6cbb;
+}
+
+footer .social li:nth-child(5):hover:before {
+  background-color: #ff1a1a;
+}
+
+footer .social li:hover:before {
+  filter: blur(4px);
+  box-shadow: 0 0 15 #0a82ed;
+  transform: scale(1.2);
+}
+
+footer .social li:nth-child(1):hover:before {
+  filter: blur(4px);
+  box-shadow: 0 0 15 #0a82ed;
+  transform: scale(1.2);
+}
+
+footer .social li:nth-child(2):hover:before {
+  filter: blur(4px);
+  box-shadow: 0 0 15 #04a2ffb3;
+  transform: scale(1.2);
+}
+
+footer .social li:nth-child(3):hover:before {
+  filter: blur(4px);
+  box-shadow: 0 0 15 #e23670;
+  transform: scale(1.2);
+}
+
+footer .social li:nth-child(4):hover:before {
+  filter: blur(4px);
+  box-shadow: 0 0 15 #2a6cbb;
+  transform: scale(1.2);
+}
+
+footer .social li:nth-child(5):hover:before {
+  filter: blur(4px);
+  box-shadow: 0 0 15 #ff1a1a;
+  transform: scale(1.2);
+}
+
+footer .social li:hover:nth-child(1) {
+  color: #0a82ed;
+  box-shadow: 0 0 15px #0a82ed;
+  text-shadow: 0 0 15px #0a82ed;
+}
+
+footer .social li:hover:nth-child(2) {
+  color: #04a2ffb3;
+  box-shadow: 0 0 15px #04a2ffb3;
+  text-shadow: 0 0 15px #04a2ffb3;
+}
+
+footer .social li:hover:nth-child(3) {
+  color: #e23670;
+  box-shadow: 0 0 15px #e23670;
+  text-shadow: 0 0 15px #e23670;
+}
+
+footer .social li:hover:nth-child(4) {
+  color: #2a6cbb;
+  box-shadow: 0 0 15px #2a6cbb;
+  text-shadow: 0 0 15px #2a6cbb;
+}
+
+footer .social li:hover:nth-child(5) {
+  color: #ff1a1a;
+  box-shadow: 0 0 15px #ff1a1a;
+  text-shadow: 0 0 15px #ff1a1a;
+}
+
+/* bagian link animation footer end*/
+
+/* bagian 3 link footer start */
+footer .linkfoot {
+  gap: 4rem;
+  margin-top: 2rem;
+  display: flex;
+}
+
+footer .linkfoot li a {
+  color: white;
+}
+
+footer .linkfoot li a:hover {
+  color: #666;
+}
+/* bagian 3 link footer end */
